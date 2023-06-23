@@ -1,8 +1,9 @@
-const {send} = require('./request')
-const {read} = require('./response')
+const internals = require('./internals')
+// const {send} = require('./request')
+// const {read} = require('./response')
 function request(url, data){
-    send(url, data);
-    return read();
+    internals.request.send(url, data);
+    return internals.response.read();
 }
 
 const responseData = request('random url','my data')
