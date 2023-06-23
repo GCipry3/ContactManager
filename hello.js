@@ -8,4 +8,9 @@ celebrity.on('race win', function(){
     console.log('Booo!');
 })
 
+process.on('exit',()=>{
+    console.log('Process exit')
+})
+
 celebrity.emit('race win')
+celebrity.emit('race lost')
