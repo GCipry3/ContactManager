@@ -12,5 +12,10 @@ process.on('exit',()=>{
     console.log('Process exit')
 })
 
+celebrity.on('race',(result)=>{
+    console.log(`The result is ${result}`)
+})
+
 celebrity.emit('race win')
 celebrity.emit('race lost')
+celebrity.emit('race', 'lost')
