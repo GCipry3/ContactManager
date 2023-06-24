@@ -13,16 +13,15 @@ app.use(express.json())
 client.connect();
 
 app.get('/', (req, res) => {
-  client.query('SELECT * FROM users', (err, dbRes) => {
-    if (err) {
-      console.error(err);
-      res.status(500).json({ error: 'Database query failed' });
-    } else {
-      res.json(dbRes.rows);
-    }
-  });
-  console.log('Hello World')
-  // res.send('Hello!!!')
+    client.query('SELECT * FROM users', (err, dbRes) => {
+        if (err) {
+            console.error(err);
+            res.status(500).json({ error: 'Database query failed' });
+        } else {
+            res.json(dbRes.rows);
+        }
+    });
+    console.log('Hello World')
 });
 
 app.post('/users', async (req, res) => {
