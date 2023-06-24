@@ -1,7 +1,6 @@
 const postgreSQL = require('pg')
 const express = require('express')
 const app = express()
-// Set an env var for the PORT, and a default value
 const port = process.env.PORT || 3000;
 
 const client = new postgreSQL.Client({
