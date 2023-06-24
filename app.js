@@ -15,14 +15,14 @@ app.get('/',(req,res)=>{
 app.post('/users', async (req, res) => {
     const { username, password } = req.body;
     try {
-        await client.connect();
-        const result = await client.query('INSERT INTO users (username, password) VALUES ($1, $2)', [username, password]);
+        await connection.connect();
+        const result = await connection.query('INSERT INTO users (username, password) VALUES ($1, $2)', [username, password]);
         res.status(201).json({ status: 'success', message: 'user created' });
     } catch (err) {
         console.error(err);
         res.status(500).json({ status: 'error', message: 'internal server error' });
     } finally {
-        await client.end();
+        await connection.end();
     }
 });
 
