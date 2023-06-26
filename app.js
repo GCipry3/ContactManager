@@ -1,13 +1,16 @@
 const postgreSQL = require('pg')
 const express = require('express')
+const dotend = require("dotenv").config();
+
 const app = express()
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000; 
 
 const client = new postgreSQL.Client({
     connectionString: process.env.DATABASE_URL
 })
 
 app.use(express.json())
+app.use("/api/contacts", require("./routes/contactRoutes"))
 
 client.connect();
 
@@ -33,6 +36,7 @@ app.post('/users', async (req, res) => {
         res.status(500).json({ status: 'error', message: 'internal server error' });
     }
 });
+
 
 app.listen(port,()=>{
     console.log(`App listening on port ${port}`)

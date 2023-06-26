@@ -2,6 +2,8 @@ Notes/
 node_modules/
 myapp.zip
 .venv/
+.env
+
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
