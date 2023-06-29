@@ -66,17 +66,17 @@ The Contact Manager lets users register and log in to manage their contacts. The
 To run the app locally, you need to have Node.js and npm installed. You will also need Docker if you want to run it in a container.
 
 ## 1. Clone the repo:
-```
+```sh
 git clone https://github.com/GCipry3/ContactManager.git
 ```
 
 ## 2. Install the dependencies:
-```
+```sh
 npm install
 ```
 
 ## 3. Start the server:
-```
+```sh
 npm start
 ```
 
@@ -86,7 +86,7 @@ npm start
 
 The command below will build a Docker image using the Dockerfile in your current directory and tag it (that's what -t is for) as "contact-manager-docker".
 
-```
+```sh
 docker build -t contact-manager-docker .
 ```
 
@@ -95,7 +95,7 @@ docker build -t contact-manager-docker .
 Once the image is built, you can run it as a Docker container. The command below will start a Docker container from the "contact-manager-docker" image.
 
 The -p 3000:3000 part is for port mapping: it tells Docker to map port 3000 in the container to port 3000 on your local machine.
-```
+```sh
 docker run -p 3000:3000 contact-manager-docker
 ```
 
