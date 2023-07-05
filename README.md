@@ -10,6 +10,11 @@ The application is deployed on [AWS Elastic Beanstalk](http://game-hub.eu-centra
 
 The Contact Manager lets users register and log in to manage their contacts. They can perform basic CRUD (Create, Read, Update, Delete) operations on contacts.
 
+# Flask-Blog 
+```diff
+-( Server status : Offline for maintenance)
+```
+
 ## 🚀 API Usage
 
 ### User routes:
